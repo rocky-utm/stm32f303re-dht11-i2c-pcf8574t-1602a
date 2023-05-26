@@ -582,10 +582,6 @@ void LCD_Send_String (const char *str, ...)
 	int length = vsnprintf(NULL, 0, str, args);
 
 	char* result = (char*)malloc((length + 1) * sizeof(char));
-	if (!result) {
-		PrintSerial("Could not allocate memory to send string to LCD");
-		return;
-	}
 
 	vsprintf(result, str, args);
 
